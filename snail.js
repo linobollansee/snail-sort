@@ -14,23 +14,23 @@ function snail(array) {
 
   // Create an empty array to store our result
   // Erstelle ein leeres Array, um unser Ergebnis zu speichern
-  var result = [];
+  let result = [];
 
   // Set the initial top boundary (starting row)
   // Setze die anfängliche obere Grenze (Startzeile)
-  var top = 0;
+  let top = 0;
 
   // Set the initial bottom boundary (ending row)
   // Setze die anfängliche untere Grenze (Endzeile)
-  var bottom = array.length - 1;
+  let bottom = array.length - 1;
 
   // Set the initial left boundary (starting column)
   // Setze die anfängliche linke Grenze (Startspalte)
-  var left = 0;
+  let left = 0;
 
   // Set the initial right boundary (ending column)
   // Setze die anfängliche rechte Grenze (Endspalte)
-  var right = array[0].length - 1;
+  let right = array[0].length - 1;
 
   // Keep looping while we still have elements to process
   // Schleife solange, bis wir noch Elemente zu verarbeiten haben
@@ -39,7 +39,7 @@ function snail(array) {
     // Schritt 1: Nach RECHTS entlang der oberen Zeile bewegen
     // Loop from left boundary to right boundary
     // Schleife von linker Grenze bis rechter Grenze
-    for (var i = left; i <= right; i++) {
+    for (let i = left; i <= right; i++) {
       // Add the current element to result
       // Füge das aktuelle Element zum Ergebnis hinzu
       result.push(array[top][i]);
@@ -52,7 +52,7 @@ function snail(array) {
     // Schritt 2: Nach UNTEN entlang der rechten Spalte bewegen
     // Loop from the new top boundary to bottom boundary
     // Schleife von der neuen oberen Grenze bis zur unteren Grenze
-    for (var i = top; i <= bottom; i++) {
+    for (let i = top; i <= bottom; i++) {
       // Add the element from the right column to result
       // Füge das Element aus der rechten Spalte zum Ergebnis hinzu
       result.push(array[i][right]);
@@ -68,7 +68,7 @@ function snail(array) {
     if (top <= bottom) {
       // Loop from right boundary to left boundary (going backwards)
       // Schleife von rechter Grenze zu linker Grenze (rückwärts)
-      for (var i = right; i >= left; i--) {
+      for (let i = right; i >= left; i--) {
         // Add the element from the bottom row to result
         // Füge das Element aus der unteren Zeile zum Ergebnis hinzu
         result.push(array[bottom][i]);
@@ -85,7 +85,7 @@ function snail(array) {
     if (left <= right) {
       // Loop from bottom boundary to top boundary (going upwards)
       // Schleife von unterer Grenze zu oberer Grenze (aufwärts)
-      for (var i = bottom; i >= top; i--) {
+      for (let i = bottom; i >= top; i--) {
         // Add the element from the left column to result
         // Füge das Element aus der linken Spalte zum Ergebnis hinzu
         result.push(array[i][left]);
